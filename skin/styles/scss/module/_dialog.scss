@@ -1,0 +1,54 @@
+.popup {
+  display: none;
+}
+
+#MyCMSDialogShadow {
+  background-color: rgba(0, 0, 0, 0.6);
+  height: 100%;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  top: 0;
+  width: 100%;
+  z-index: 1000;
+}
+
+.mycms-dialog {
+  &__container {
+    background-color: $bg-color;
+    border-radius: $border-radius-base;
+    padding: $gutter;
+    min-width: 200px;
+    max-width: 800px;
+    position: absolute;
+    iframe {
+      border: none;
+    }
+    @include phones {
+      left: 20px !important;
+      right: 20px !important;
+    }
+  }
+  &__header {
+    margin-bottom: 30px;
+  }
+  &__title {
+    display: block;
+    @extend %ttl-base;
+  }
+  &__close {
+    @include close-btn($base-color, 2px, 30px, transparentize(#fff, 0.2));
+    background-color: transparentize(#fff, 0.5);
+    position: absolute;
+    right: -30px;
+    top: -30px;
+    @include phones {
+      right: 0;
+      top: -40px;
+    }
+  }
+  &__content {
+
+  }
+}
