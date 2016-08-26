@@ -76,6 +76,7 @@ include("../templates/main/header.tpl.php");
                         <svg class="svg-icon icon-search">
                             <use xlink:href="/skin/images/svg-sprite.svg#search"></use>
                         </svg>
+                        <br>
                         <svg class="svg-icon icon-email">
                             <use xlink:href="/skin/images/svg-sprite.svg#email"></use>
                         </svg>

@@ -5,7 +5,14 @@
   "license": "ISC",
   "dependencies": {
     "jquery": "3.1.0",
+    "jquery-migrate": "1.4.0",
     "normalize-css": "normalize.css#^4.2.0",
-    "jquery.maskedinput": "^1.4.1"
+    "jquery.maskedinput": "^1.4.1",
+    "slick-carousel": "^1.6.0",
+    "scroll-parallax": "^1.1.0",
+    "jquery-mousewheel": "^3.1.13",
+    "simplr-smoothscroll": "^1.0.1",
+    "waypoints": "^4.0.0",
+    "animate.css": "^3.5.2"
   }
 }

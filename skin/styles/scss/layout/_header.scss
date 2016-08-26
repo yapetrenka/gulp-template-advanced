@@ -1,3 +1,67 @@
 .main-header {
+  background-color: rgba($base-color, .05);
+  padding: $gutter 0;
+  &__layout {
+    @extend %justify-content;
+  }
+}
 
+.header-logo {
+  flex: none;
+  width: 80px;
+  &__svg {
+    height: 80px;
+    width: 80px;
+  }
+}
+
+.header-nav {
+  margin: 0 $gutter;
+}
+
+.menu {
+  display: flex;
+  &__item {
+    font-size: 18px;
+    font-weight: bold;
+    margin: 0 20px;
+    text-transform: uppercase;
+  }
+  &__link {
+    color: $text-color;
+  }
+}
+
+.header-phone {
+  font-size: 20px;
+  &__icon {
+    height: 20px;
+    margin-right: 5px;
+    vertical-align: middle;
+    width: 20px;
+  }
+  &__link {
+    color: $text-color;
+  }
+}
+
+.breadcrumbs {
+  font-size: 14px;
+  color: #707070;
+  padding: 10px 0;
+  margin-right: 15px;
+  a {
+    color: $text-color;
+  }
+  &__item {
+    &:after {
+      content: '>';
+      margin: 0 3px;
+    }
+    &:last-child {
+      &:after {
+        display: none;
+      }
+    }
+  }
 }

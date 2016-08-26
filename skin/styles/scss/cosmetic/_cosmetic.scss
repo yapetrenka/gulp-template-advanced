@@ -14,6 +14,16 @@
 .bbold {font-weight: 600; font-size: 16px;}
 .hidden {display: none;}
 .nowrap {white-space: nowrap;}
+.os-animation {
+  opacity: 0;
+  &.animated {
+    opacity: 1;
+  }
+}
+
+.parallax-img {
+  max-width: 5000px;
+}
 
 .clearfix {
   @extend %clearfix;

@@ -1,3 +1,49 @@
 .main-footer {
+  background-color: rgba($base-color, .8);
+  color: $light-color;
+  padding: $gutter 0;
+  &__layout {
+    @extend %justify-content;
+  }
+}
 
+.footer-copy {
+
+}
+
+.footer-social {
+  margin: 0 15px;
+}
+
+.social {
+  white-space: nowrap;
+  &__item {
+    display: inline-block;
+  }
+  &__link {
+    color: $light-color;
+    margin: 0 2px;
+    text-decoration: none;
+    .svg-icon {
+      height: 30px;
+      width: 30px;
+    }
+  }
+}
+
+.footer-contacts {
+  text-align: right;
+}
+
+.footer-phone {
+  font-size: 20px;
+  &__icon {
+    height: 20px;
+    margin-right: 5px;
+    vertical-align: middle;
+    width: 20px;
+  }
+  &__link {
+    color: $light-color;
+  }
 }

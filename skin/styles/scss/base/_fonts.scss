@@ -1,0 +1,79 @@
+@font-face {
+  font-family: 'Open Sans';
+  src: local('Open Sans Light'), local('OpenSans-Light'), url('/skin/fonts/opensans/opensanslight.woff2') format('woff2'), url('/skin/fonts/opensans/opensanslight.woff') format('woff'), url('/skin/fonts/opensans/opensanslight.ttf') format('truetype');
+  font-weight: 300;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Open Sans';
+  src: local('Open Sans Light Italic'), local('OpenSansLight-Italic'), url('/skin/fonts/opensans/opensanslightitalic.woff2') format('woff2'), url('/skin/fonts/opensans/opensanslightitalic.woff') format('woff'), url('/skin/fonts/opensans/opensanslightitalic.ttf') format('truetype');
+  font-weight: 300;
+  font-style: italic;
+}
+@font-face {
+  font-family: 'Open Sans';
+  src: local('Open Sans'), local('OpenSans'), url('/skin/fonts/opensans/opensans.woff2') format('woff2'), url('/skin/fonts/opensans/opensans.woff') format('woff'), url('/skin/fonts/opensans/opensans.ttf') format('truetype');
+  font-weight: 400;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Open Sans';
+  src: local('Open Sans Italic'), local('OpenSans-Italic'), url('/skin/fonts/opensans/opensansitalic.woff2') format('woff2'), url('/skin/fonts/opensans/opensansitalic.woff') format('woff'), url('/skin/fonts/opensans/opensansitalic.ttf') format('truetype');
+  font-weight: 400;
+  font-style: italic;
+}
+@font-face {
+  font-family: 'Open Sans';
+  src: local('Open Sans Semibold'), local('OpenSans-Semibold'), url('/skin/fonts/opensans/opensanssemibold.woff2') format('woff2'), url('/skin/fonts/opensans/opensanssemibold.woff') format('woff'), url('/skin/fonts/opensans/opensanssemibold.ttf') format('truetype');
+  font-weight: 600;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Open Sans';
+  src: local('Open Sans Semibold Italic'), local('OpenSans-SemiboldItalic'), url('/skin/fonts/opensans/opensanssemibolditalic.woff2') format('woff2'), url('/skin/fonts/opensans/opensanssemibolditalic.woff') format('woff'), url('/skin/fonts/opensans/opensanssemibolditalic.ttf') format('truetype');
+  font-weight: 600;
+  font-style: italic;
+}
+@font-face {
+  font-family: 'Open Sans';
+  src: local('Open Sans Bold'), local('OpenSans-Bold'), url('/skin/fonts/opensans/opensansbold.woff2') format('woff2'), url('/skin/fonts/opensans/opensansbold.woff') format('woff'), url('/skin/fonts/opensans/opensansbold.ttf') format('truetype');
+  font-weight: 700;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Open Sans';
+  src: local('Open Sans Bold Italic'), local('OpenSans-BoldItalic'), url('/skin/fonts/opensans/opensansbolditalic.woff2') format('woff2'), url('/skin/fonts/opensans/opensansbolditalic.woff') format('woff'), url('/skin/fonts/opensans/opensansbolditalic.ttf') format('truetype');
+  font-weight: 700;
+  font-style: italic;
+}
+@font-face {
+  font-family: 'Open Sans';
+  src: local('Open Sans Extrabold'), local('OpenSans-Extrabold'), url('/skin/fonts/opensans/opensansextrabold.woff2') format('woff2'), url('/skin/fonts/opensans/opensansextrabold.woff') format('woff'), url('/skin/fonts/opensans/opensansextrabold.ttf') format('truetype');
+  font-weight: 800;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Open Sans';
+  src: local('Open Sans Extrabold Italic'), local('OpenSans-ExtraboldItalic'), url('/skin/fonts/opensans/opensansextrabolditalic.woff2') format('woff2'), url('/skin/fonts/opensans/opensansextrabolditalic.woff') format('woff'), url('/skin/fonts/opensans/opensansextrabolditalic.ttf') format('truetype');
+  font-weight: 800;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: 'Open Sans Condensed';
+  src: local('Open Sans Cond Light'), local('OpenSans-CondensedLight'), url('/skin/fonts/opensanscondensed/opensanscondlight.woff2') format('woff2'), url('/skin/fonts/opensanscondensed/opensanscondlight.woff') format('woff'), url('/skin/fonts/opensanscondensed/opensanscondlight.ttf') format('truetype');
+  font-weight: 300;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Open Sans Condensed';
+  src: local('Open Sans Cond Light Italic'), local('OpenSans-CondensedLightItalic'), url('/skin/fonts/opensanscondensed/opensanscondlightitalic.woff2') format('woff2'), url('/skin/fonts/opensanscondensed/opensanscondlightitalic.woff') format('woff'), url('/skin/fonts/opensanscondensed/opensanscondlightitalic.ttf') format('truetype');
+  font-weight: 300;
+  font-style: italic;
+}
+@font-face {
+  font-family: 'Open Sans Condensed';
+  src: local('Open Sans Condensed Bold'), local('OpenSans-CondensedBold'), url('/skin/fonts/opensanscondensed/opensanscondensedbold.woff2') format('woff2'), url('/skin/fonts/opensanscondensed/opensanscondensedbold.woff') format('woff'), url('/skin/fonts/opensanscondensed/opensanscondensedbold.ttf') format('truetype');
+  font-weight: 700;
+  font-style: normal;
+}
