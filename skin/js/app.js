@@ -11,14 +11,7 @@ $(function(){
         dots: true
     });
 
-    if ($('.parallax-img').length) {
-        var p = new Parallax('.parallax', {
-            offsetYBounds: 50,
-            intensity: 50,
-            center:1.5,
-            safeHeight: 0.15
-        }).init();
-    }
+    $('.parallax-window').parallax();
 
     $.srSmoothscroll({
         step: 150,
