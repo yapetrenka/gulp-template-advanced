@@ -39,9 +39,15 @@
     }
     &_radio {
       border-radius: 50%;
+      &:before {
+        border-radius: 50%;
+      }
     }
     &_checkbox {
       border-radius: 5px;
+      &:before {
+        border-radius: 2px;
+      }
     }
   }
 }

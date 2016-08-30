@@ -2,7 +2,7 @@
 
 .slick-list {
     .slick-loading & {
-        background: #fff url('/skin/images/ajax-loader.gif') center center no-repeat;
+        background: url('/skin/images/ajax-loader.gif') center center no-repeat;
     }
 }
 
@@ -19,20 +19,25 @@
 .slick-prev,
 .slick-next {
     background: $primary-color;
-    position: absolute;
-    height: 80px;
-    width: 50px;
-    font-size: 0;
-    cursor: pointer;
-    color: transparent;
-    top: 50%;
-    margin-top: -40px;
-    padding: 0;
     border: none;
+    color: transparent;
+    cursor: pointer;
+    font-size: 0;
+    height: 80px;
+    margin-top: -40px;
     outline: none;
+    padding: 0;
+    position: absolute;
+    top: 50%;
+    transition: all .2s ease;
+    width: 50px;
     z-index: 1;
+    .slick-dotted & {
+        margin-top: -65px;
+    }
     &:hover, &:focus {
         outline: none;
+        width: 54px;
     }
     &.slick-disabled {
         opacity: 0.5;
@@ -43,7 +48,6 @@
         content: '';
         height: 30px;
         position: absolute;
-        left: 10px;
         top: 25px;
         width: 30px;
     }
@@ -51,51 +55,57 @@
 
 
 .slick-prev {
+    border-radius: 0 $border-radius-base $border-radius-base 0;
     left: 0;
     &:before {
         background-image: url('/skin/images/arrow-left.svg');
+        right: 10px;
     }
 }
 
 .slick-next {
+    border-radius: $border-radius-base 0 0 $border-radius-base;
     right: 0;
     &:before {
         background-image: url('/skin/images/arrow-right.svg');
+        left: 10px;
     }
 }
 
 /* Dots */
 
 .slick-dots {
+    display: block;
+    list-style: none;
+    padding: 0;
     position: absolute;
     bottom: 0;
-    list-style: none;
-    display: block;
     text-align: center;
-    padding: 0;
     width: 100%;
     li {
-        position: relative;
         display: inline-block;
         margin: 0 3px;
         padding: 0;
+        position: relative;
         button {
             background-color: transparent;
             border-radius: 50%;
-            border: 3px solid $light-color;
-            cursor: pointer;
-            height: 20px;
-            width: 20px;
-            outline: none;
-            line-height: 0px;
-            font-size: 0px;
+            border: 3px solid $primary-color;
             color: transparent;
+            cursor: pointer;
+            font-size: 0px;
+            height: 20px;
+            line-height: 0px;
+            outline: none;
+            transition: all .2s ease;
+            width: 20px;
             &:hover, &:focus {
+                background-color: rgba($primary-color, .5);
                 outline: none;
             }
         }
         &.slick-active button {
-            background-color: $light-color;
+            background-color: $primary-color;
         }
     }
 }

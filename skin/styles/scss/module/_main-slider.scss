@@ -1,0 +1,15 @@
+.main-slider {
+  overflow: hidden;
+  padding-bottom: 50px;
+  &__wrap {
+    overflow: hidden;
+    max-width: 800px;
+    margin: 0 auto;
+  }
+  &:not(.slick-initialized) {
+    width: 100000px;
+  }
+  &__item {
+    float: left;
+  }
+}
