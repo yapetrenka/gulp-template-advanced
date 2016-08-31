@@ -38,6 +38,24 @@ include("../templates/main/header.tpl.php");
                 </div>
                 <div class="grid">
                     <div class="grid__cell">
+                        <select class="select-base" name="">
+                            <option value="1">Опция 1</option>
+                            <option value="2">Опция 2</option>
+                            <option value="3">Опция 3</option>
+                        </select>
+                    </div>
+                    <div class="grid__cell">
+                        <select class="select-base" multiple data-text="Мультиселект">
+                            <option value="1">Опция 1</option>
+                            <option value="2">Опция 2</option>
+                            <option value="3">Опция 3</option>
+                            <option value="4">Опция 4</option>
+                            <option value="5">Опция 5</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="grid">
+                    <div class="grid__cell">
                         <label class="switch"><input type="radio" name="radio" class="switch__inp" checked><span class="switch__el switch__el_radio"></span> radio 1</label>
                     </div>
                     <div class="grid__cell">

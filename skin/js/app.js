@@ -5,6 +5,20 @@ $(function(){
 
     $('.phone-mask').mask("+7 (999) 999-99-99");
 
+    $('select').each(function(){
+        var multiple = $(this).attr('multiple') ? true : false;
+        var noneSelectedText = $(this).data('text');
+        $(this).multiselect({
+            multiple: multiple,
+            checkAllText: 'Выбрать все',
+            uncheckAllText: 'Удалить все',
+            noneSelectedText: noneSelectedText,
+            selectedText: '# выбрано',
+            selectedList: 3,
+            height: 234
+        });
+    });
+
     $('.main-slider').slick({
         infinite: true,
         arrows: true,

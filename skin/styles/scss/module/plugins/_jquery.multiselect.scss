@@ -1,0 +1,138 @@
+.ui-multiselect {
+  @extend %form-element;
+  @include transition(all .2s ease);
+  padding-right: $gutter*2;
+  position: relative;
+  &.ui-state-active {
+    border-color: $primary-color;
+    border-radius: $border-radius-base $border-radius-base 0 0;
+    .ui-icon {
+      @include transform(rotate(180deg));
+    }
+  }
+  &.state-empty {
+    border-color: $attention-color;
+  }
+  &.ui-state-disabled {
+    .ui-icon {
+      opacity: 0.3;
+    }
+  }
+  span:not(.ui-icon) {
+    display: block;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+  .ui-icon {
+    @include transition(all .2s ease);
+    position: absolute;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    width: $input-height;
+    &:before {
+      //@include icon($icons, arr-base);
+      //@extend %abs-center;
+      content: '';
+      opacity: 0.8;
+    }
+  }
+}
+
+.ui-multiselect-menu {
+  background: #fff;
+  border: 2px solid $primary-color;
+  border-radius: 0 0 $border-radius-base $border-radius-base;
+  color: $text-color;
+  display: none;
+  font: {
+    family: $font-family-base;
+    size: $font-size-base;
+  };
+  margin-top: -2px;
+  padding: 0 2px 4px 4px;
+  position: absolute;
+  z-index: 10000;
+  ul {
+    margin: 0;
+  }
+}
+
+.ui-multiselect-header {
+  margin: 0 2px 4px 0;
+  overflow: hidden;
+  li {
+    float: left;
+    width: 49%;
+    &:first-child {
+      margin-right: 2%;
+    }
+  }
+  a:not(.ui-multiselect-close) {
+    //background-color: transparentize($base-color, 0.9);
+    border-radius: 5px;
+    color: $text-color;
+    display: block;
+    margin-top: 4px;
+    padding: 5px;
+    text-align: center;
+    text-decoration: none;
+    &:hover {
+      //background-color: transparentize($base-color, 0.8);
+    }
+  }
+  .ui-multiselect-close {
+    display: none;
+  }
+}
+
+.ui-multiselect-checkboxes {
+  height: auto !important;
+  max-height: 250px;
+  overflow-y: auto;
+  position: relative;
+  li {
+    clear: both;
+    margin-right: 2px;
+    label {
+      cursor: pointer;
+      display: block;
+      padding: 1px 0;
+      &:hover span {
+        //background-color: color-alpha('primary', 2);
+      }
+      &.ui-state-active span {
+        //background-color: color-alpha('primary', 4);
+      }
+      input[type="checkbox"] {
+        display: none;
+        &[aria-selected="true"] + span {
+         // background-color: color-alpha('primary', 4);
+        }
+      }
+      input[type="radio"] {
+        display: none;
+      }
+      span {
+        display: block;
+        border-radius: 5px;
+        padding: 4px 5px;
+      }
+    }
+    &.ui-multiselect-optgroup-label {
+      text-align: center;
+      font-weight: 500;
+      border-bottom: 1px solid;
+      a {
+        display: block;
+        text-decoration: none;
+      }
+    }
+  }
+}
+
+/* remove label borders in IE6 because IE6 does not support transparency */
+* html .ui-multiselect-checkboxes label {
+  border: none
+}
