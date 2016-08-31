@@ -13,6 +13,7 @@
     "simplr-smoothscroll": "^1.0.1",
     "waypoints": "^4.0.0",
     "animate.css": "^3.5.2",
-    "parallax.js": "^1.4.2"
+    "parallax.js": "^1.4.2",
+    "lightgallery": "^1.2.21"
   }
 }

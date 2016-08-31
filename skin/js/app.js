@@ -18,6 +18,14 @@ $(function(){
         speed: 800
     });
 
+    $(".lg_album").lightGallery({
+        selector: '.lg_item',
+        exThumbImage: 'data-exthumbimage',
+        thumbWidth: 104,
+        thumbContHeight: 91,
+        download: false
+    });
+
     onScrollInit( $('.os-animation') );
 
 });

@@ -9,5 +9,7 @@ module.exports = [
   'bower_components/jquery-mousewheel/jquery.mousewheel.min.js',
   'bower_components/simplr-smoothscroll/lib/jquery.simplr.smoothscroll.min.js',
   'bower_components/waypoints/lib/jquery.waypoints.min.js',
+  'bower_components/lightgallery/dist/js/lightgallery.min.js',
+  'bower_components/lightgallery/dist/js/lg-thumbnail.min.js',
   'js/src/*.js'
 ];
