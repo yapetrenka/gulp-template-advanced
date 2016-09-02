@@ -137,7 +137,7 @@
           }
           break;
         case 'hash':
-          $('*[mycms-dialog-id="'+id+'"]').hide().removeClass('opened');
+          $('*[mycms-dialog-id="'+id+'"]').hide().removeClass('animated fadeInDown');
           break;
       }
       var lastDialog = null;
@@ -282,7 +282,7 @@
                   $(conteiner).find('.title').text(option.iframe_resize.title);
                 }
 
-                $this.__resize(id);
+                $this.__toCenterSize(id);
               }else{
                 var iframe_width  = option.height;
                 var iframe_height = option.height;
@@ -291,7 +291,7 @@
                 $(conteiner).height(option.height);
                 $(conteiner).find('.mycms-dialog-content').removeAttr('style');
 
-                $this.__resize(id);
+                $this.__toCenterSize(id);
               }
             }
           });
@@ -337,65 +337,13 @@
         var arg = [id];
         option.open.apply( $('*[mycms-dialog-id="'+id+'"]'), Array.prototype.slice.call( arg ));
       }
-      //$('*[mycms-dialog-id="'+id+'"]').draggable({handle: ".header .title"});
       this._conteiner[id] = $('*[mycms-dialog-id="'+id+'"]');
       $this.__toCenterSize(id);
-      $this.__resize(id);
       this.__activeDialog(id);
       this.__count();
     },
     /* По центу экрана и установка размера окна */
     '__toCenterSize':function(id){
-      var option    = this.__getParam(id);
-      var page_size = this.__pageSize();
-
-      var width     = option.width;
-      var height    = option.height;
-      var $this     = this;
-
-      if(width=="auto" && height=="auto"){
-        var width  = (page_size[2]*80)/100;
-        if(option.type=="hash"){
-          var height = $(option.url).innerHeight();
-        }else{
-          var height = (page_size[3]*70)/100;
-        }
-      }else if(width=="auto"){
-        var width  = (page_size[2]*80)/100;
-      }else if(height=="auto"){
-        if(option.type=="hash"){
-          var height = $(option.url).innerHeight();
-        }else{
-          var height = (page_size[3]*70)/100;
-        }
-      }
-      if(option.minwidth>0){
-        var width  = width<option.minwidth ? option.minwidth : width;
-      }
-      if(option.minheight>0){
-        var height  = height<option.minheight ? option.minheight : height;
-      }
-      if(option.maxwidth>0){
-        var width  = width>option.maxwidth ? option.maxwidth : width;
-      }
-      if(option.maxheight>0){
-        var height  = height>option.maxheight ? option.maxheight : height;
-      }
-      if(option.type=="hash" && option.width=="auto"){
-        width = $(option.url).innerWidth();
-      }
-      if(option.type=="hash" && option.height=="auto"){
-        height = $(option.url).innerHeight();
-      }
-
-      var Left = Math.max(40, parseInt(page_size[2]/2 - width/2)) + 'px';
-      var Top  = Math.max(40+$(document).scrollTop(), parseInt((page_size[3]/2 - height/2)+$(document).scrollTop())) + 'px';
-      //$('*[mycms-dialog-id="'+id+'"]').find('.mycms-dialog-content').height(height-31);
-      //,'width':width+'px','height':height+'px'
-      $('*[mycms-dialog-id="'+id+'"]').css({'position':'absolute','left':Left,'top':Top});
-    },
-    /* Если меняется размер окна */
-    '__resize':function(id){
       var key = id ? id : false;
       var page_size = this.__pageSize();
       var dd = this._conteiner;
@@ -403,7 +351,7 @@
         var width   = $('*[mycms-dialog-id="'+id+'"]').innerWidth();
         var height  = $('*[mycms-dialog-id="'+id+'"]').innerHeight();
         var Left = Math.max(40, parseInt(page_size[2]/2 - width/2)) + 'px';
-        var Top  = Math.max(40+$(document).scrollTop(), parseInt((page_size[3]/2 - height/2)+$(document).scrollTop())) + 'px';
+        var Top  = Math.max(60+$(document).scrollTop(), parseInt((page_size[3]/2 - height/2)+$(document).scrollTop())) + 'px';
         $('*[mycms-dialog-id="'+id+'"]').css({'left':Left,'top':Top});
       }else{
         for (var value in this._conteiner) {
@@ -411,7 +359,7 @@
             var width   = $('*[mycms-dialog-id="'+value+'"]').innerWidth();
             var height  = $('*[mycms-dialog-id="'+value+'"]').innerHeight();
             var Left = Math.max(40, parseInt(page_size[2]/2 - width/2)) + 'px';
-            var Top  = Math.max(40+$(document).scrollTop(), parseInt((page_size[3]/2 - height/2)+$(document).scrollTop())) + 'px';
+            var Top  = Math.max(60+$(document).scrollTop(), parseInt((page_size[3]/2 - height/2)+$(document).scrollTop())) + 'px';
             $('*[mycms-dialog-id="'+value+'"]').css({'left':Left,'top':Top});
           }
         }
@@ -421,8 +369,8 @@
     '__shadow':function(){
       if($('#MyCMSDialogShadow').length>0) return false;
       $('body').append($('<div id="MyCMSDialogShadow"></div>').click(function(){
-       $this.closeAll();
-       }));
+        $this.closeAll();
+      }));
       var $this = this;
 
     },
@@ -445,7 +393,7 @@
         }
       }
       var zindex    = (parseInt($('#MyCMSDialogShadow').css('z-index'))+1);
-      $('*[mycms-dialog-id="'+id+'"]').css('z-index',zindex).addClass('opened');
+      $('*[mycms-dialog-id="'+id+'"]').css('z-index',zindex).addClass('animated fadeInDown');
       this._active = id;
     },
     '__count':function(){
@@ -513,13 +461,14 @@
     '_param': new Array,
   }
   $(window).resize(function(){
-    MyCMSDialog.__resize();
+    MyCMSDialog.__toCenterSize();
   });
 })();
 
 ;(function( $ ){
   $.fn.MyCMSDialog = function(param,arg){
     this.on('click',function(){
+      MyCMSDialog.closeAll();
       MyCMSDialog.open(param,arg,this);
       return false;
     });
